@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
+        DOCKER_BUILDKIT = '1'
         IMAGE = 'priyanshubhatt80/ai-object-detector:latest'
     }
 
     triggers {
-        // Automatically trigger build on GitHub push
         githubPush()
     }
 
