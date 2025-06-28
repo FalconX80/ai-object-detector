@@ -1,0 +1,7 @@
+# .gitignore
+trained_model.pth
+__pycache__/
+*.pyc
+*.pkl
+*.log
+.env

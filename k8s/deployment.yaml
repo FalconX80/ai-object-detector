@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: detector-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: detector
+  template:
+    metadata:
+      labels:
+        app: detector
+    spec:
+      containers:
+      - name: detector
+        image: priyanshubhatt80/ai-object-detector:latest
+        ports:
+        - containerPort: 5000
