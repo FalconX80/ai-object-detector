@@ -5,13 +5,12 @@ pipeline {
         IMAGE = 'priyanshubhatt80/ai-object-detector:latest'
     }
 
-    stages {
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/FalconX80/ai-object-detector.git'
-            }
-        }
+    triggers {
+        // Automatically trigger build on GitHub push
+        githubPush()
+    }
 
+    stages {
         stage('Build Docker Image') {
             steps {
                 script {
