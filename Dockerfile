@@ -1,11 +1,11 @@
-FROM pytorch/pytorch:2.7.1-cuda11.8-cudnn9-runtime
+FROM python:3.10-slim
 
+RUN apt-get update && apt-get install -y \
+    libgl1 libglib2.0-0 && \
+    pip install torch torchvision flask numpy opencv-python pillow
+
+COPY . /app
 WORKDIR /app
 
-COPY . .
-
-RUN pip install --upgrade pip && pip install -r requirements.txt
-
 EXPOSE 5000
-
 CMD ["python", "app.py"]
