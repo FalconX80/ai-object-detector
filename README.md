@@ -1,1 +1,1 @@
-#ai-object-detector
+ai-object-detector
